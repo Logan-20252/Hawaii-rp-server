@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hawaii RP - FiveM</title>
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: url('https://i.imgur.com/LVVdK0Y.jpg') center/cover no-repeat;
+    animation: fadeIn 2s ease-in;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px #000;
+  }
+  header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px #000;
+  }
+  .buttons {
+    margin: 1em;
+  }
+  .buttons a {
+    text-decoration: none;
+    background: #ff6600;
+    color: white;
+    padding: 0.75em 1.5em;
+    margin: 0.5em;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .buttons a:hover {
+    background: #ff8533;
+  }
+  section {
+    padding: 4em 1em;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+  section.visible {
+    opacity: 1;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2rem;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/QZQ8iyK.png" alt="Hawaii RP Logo" style="width: 200px; border-radius: 20px; box-shadow: 0 0 20px #000;">
+    <h1>Welcome to Hawaii RP</h1>
+    <p>Experience immersive FiveM roleplay on a beautiful Hawaii-themed server with active staff and a friendly community.</p>
+    <div class="buttons">
+      <a href="https://discord.gg/JuNfWZckbQ" target="_blank">Join Discord</a>
+      <a href="fivem://connect/46.251.234.113:14800">Connect to Server</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Hawaii RP</h2>
+    <p>Hawaii RP brings the Aloha spirit to your FiveM experience with custom vehicles, realistic economy, and dynamic roleplay opportunities set in a beautiful island environment. Whether you're a cop, EMS, civilian, or criminal, you will find your place here.</p>
+  </section>
+
+  <section id="rules">
+    <h2>Server Rules</h2>
+    <p>We expect all players to respect each other, engage in quality roleplay, and follow community guidelines. No RDM/VDM, no exploiting, and always value your life in situations. Full rules are available in our Discord server.</p>
+  </section>
+
+  <section id="join">
+    <h2>Join Us Today</h2>
+    <p>Click "Join Discord" to become part of our community, get whitelisted, and join patrols. Click "Connect to Server" to hop in and start your Hawaii RP journey immediately.</p>
+  </section>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+</body>
+</html>
